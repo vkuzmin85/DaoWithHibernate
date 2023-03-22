@@ -10,9 +10,9 @@ import java.util.Objects;
 
 @Entity
 @Data
-//@NoArgsConstructor
-@AllArgsConstructor
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Persons {
 
     @EmbeddedId
@@ -24,16 +24,14 @@ public class Persons {
     @Column(name = "city_of_living")
     private String city;
 
-    public Persons() {
+    /*public Persons() {
     }
 
     public Persons(String name, String surname, int age, String phoneNumber, String cityOfLiving) {
-        this.contact.setName(name);
-        this.contact.setSurname(surname);
-        this.contact.setAge(age);
+        this.contact = new Contact(name, surname, age);
         this.phoneNumber = phoneNumber;
         this.city = cityOfLiving;
-    }
+    }*/
 
     public String getName() {
         return contact.getName();

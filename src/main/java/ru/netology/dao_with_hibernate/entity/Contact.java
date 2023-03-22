@@ -1,5 +1,6 @@
 package ru.netology.dao_with_hibernate.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.Data;
 
@@ -13,16 +14,16 @@ public class Contact implements Serializable {
 
     private String surname;
 
-    private int age;
+    private Integer age;
 
-    public Contact() {
+    /*public Contact() {
     }
 
     public Contact(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
-    }
+    }*/
 
     public String getName() {
         return name;
