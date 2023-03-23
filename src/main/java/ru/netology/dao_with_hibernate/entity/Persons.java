@@ -28,9 +28,10 @@ public class Persons {
     }
 
     public Persons(String name, String surname, int age, String phoneNumber, String cityOfLiving) {
-        this.contact.setName(name);
+        /*this.contact.setName(name);
         this.contact.setSurname(surname);
-        this.contact.setAge(age);
+        this.contact.setAge(age);*/
+        this.contact = new Contact(name, surname, age);
         this.phoneNumber = phoneNumber;
         this.city = cityOfLiving;
     }
