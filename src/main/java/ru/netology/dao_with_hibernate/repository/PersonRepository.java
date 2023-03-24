@@ -1,6 +1,8 @@
 package ru.netology.dao_with_hibernate.repository;
 
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.netology.dao_with_hibernate.entity.Persons;
@@ -18,4 +20,12 @@ public interface PersonRepository extends JpaRepository<Persons, Long> {
 
     @Query("select p from Persons p where p.contact.name=:name and p.contact.surname=:surname")
     List<Optional<Persons>> findPersonsByContactNameAndContactSurname(String name, String surname);
+
+    @Query("select p from Persons p")
+    List<Persons> readAll();
+
+    @Modifying
+    @Transactional
+    @Query("delete from Persons p where p.contact.name=:name")
+    void deletePersonsByName(String name);
 }

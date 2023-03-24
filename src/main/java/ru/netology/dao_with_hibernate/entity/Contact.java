@@ -1,8 +1,8 @@
 package ru.netology.dao_with_hibernate.entity;
 
+import jakarta.persistence.Embeddable;
 import lombok.Data;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
